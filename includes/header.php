@@ -38,7 +38,7 @@
 
             <nav class="header-nav ms-auto">
                 <ul class="d-flex align-items-center">
-                    <li class="nav-item me-3">
+                    <!-- <li class="nav-item me-3">
                         <a class="btn btn-primary btn-sm" href="<?= $base_url; ?>addpost">
                             <i class="bi bi-plus-circle-dotted"></i> <span class="d-none d-lg-inline">Add Post</span>
                         </a>
@@ -47,7 +47,7 @@
                         <a class="nav-link nav-icon" href="<?= $base_url; ?>search">
                             <i class="bi bi-search"></i>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="<?= $base_url; ?>myaccount">
                             <img src="<?= $base_url; ?>/assets/img/user-img.png" alt="Profile" class="rounded-circle">

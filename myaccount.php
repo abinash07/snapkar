@@ -12,7 +12,7 @@
                         <p class="mb-2 fw-semibold" style="font-size: 14px; cursor: pointer;">@Abinash <i id="shareLink" class="bi bi-share text-primary"></i></p>
 
                         <button class="btn btn-primary btn-sm mb-3 mt-2" style="font-size: 13px;">Follow</button>
-                        <button id="followBtn" class="btn btn-primary btn-sm mb-3 mt-2" style="font-size: 13px;">Message</button>
+                        <a href="<?= $base_url; ?>editprofile" class="btn btn-primary btn-sm mb-3 mt-2" style="font-size: 13px;">Edit Profile</a>
                         <a href="<?= $base_url; ?>settings" class="btn btn-primary btn-sm mb-3 mt-2" style="font-size: 13px;"><i class="bi bi-gear-fill"></i></a>
 
                         <p id="bio">Hi you can knock me!</p>
@@ -29,25 +29,6 @@
                             <div>
                                 <h6 class="mb-0" id="following">07</h6>
                                 <small class="text-muted">Following</small>
-                            </div>
-                        </div>
-
-                        <div class="text-start mt-4 small">
-                            <div class="d-flex align-items-center mb-2">
-                                <i class="bi bi-envelope-fill me-2 text-primary"></i>
-                                <span>abinash@gmail.com</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-2">
-                                <i class="bi bi-briefcase-fill me-2 text-primary"></i>
-                                <span>Software Engineer</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-2">
-                                <i class="bi bi-building me-2 text-primary"></i>
-                                <span>Currently at Google</span>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-mortarboard-fill me-2 text-primary"></i>
-                                <span>Graduate</span>
                             </div>
                         </div>
                     </div>
@@ -81,6 +62,16 @@
                                     <span class="text-dark">Single</span>
                                 </li>
                             </ul>
+
+                            <div class="social-icon mt-4">
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+
+                                <a href="social" style="background-color: #0B7DDA; color: #FFFFFF;"><i class="bi bi-pencil-square"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>

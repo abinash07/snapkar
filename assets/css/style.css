@@ -1574,3 +1574,50 @@ h6 {
   background-color: #0b7dda!important;
   color: #FFF!important;
 }
+
+/* container spacing */
+.social-icon {
+  display: flex;
+  gap: 0.5rem;        /* space between icons */
+  flex-wrap: wrap;    /* wrap on small screens */
+  align-items: center;
+}
+
+/* styling anchors (previously .social-icon p a) */
+.social-icon a {
+  display: inline-flex;              /* center icon */
+  width: 2.33333rem;
+  height: 2.33333rem;
+  justify-content: center;
+  align-items: center;
+  background: #f1f3f8;
+  color: #9299b8;
+  text-decoration: none;
+  border-radius: 50%;
+  margin-right: 5px;                 /* optional — gap already handles spacing */
+  transition: background 0.15s ease, color 0.15s ease, transform 0.12s ease;
+  box-sizing: border-box;
+}
+
+/* icon size */
+.social-icon a i {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+/* hover / focus states */
+.social-icon a:hover,
+.social-icon a:focus {
+  background: #e6e9f2;
+  color: #495057;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* optional: small screens make icons a bit smaller */
+@media (max-width: 400px) {
+  .social-icon a {
+    width: 2rem;
+    height: 2rem;
+  }
+}
