@@ -10,6 +10,7 @@
                         <img src="<?= $base_url; ?>/assets/img/shreekrishna.jpg" alt="Profile" class="rounded-circle img-fluid mb-3" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid #E4E7FA;">
                         <h5 class="fw-semibold mb-0">Abinash Nayak</h5>
                         <p class="mb-2 fw-semibold" style="font-size: 14px; cursor: pointer;">@Abinash <i id="shareLink" class="bi bi-share text-primary"></i></p>
+                        <p>Software Engineer</p>
 
                         <button class="btn btn-primary btn-sm mb-3 mt-2" style="font-size: 13px;">Follow</button>
                         <a href="<?= $base_url; ?>editprofile" class="btn btn-primary btn-sm mb-3 mt-2" style="font-size: 13px;">Edit Profile</a>
@@ -37,10 +38,10 @@
                 <div class="col-md-9">
                     <div class="card" style="box-shadow: none;">
                         <div class="card-body pt-3">
-                            <h5 class="fw-bold text-primary mb-3">Intro</h5>
-                            <p class="mb-4 text-muted" id="lintro">Hi, you can knock me!</p>
+                            <h5 class="fw-bold text-primary mb-1">Intro</h5>
+                            <p class="mb-2 text-muted" id="lintro">Hi, you can knock me!</p>
                             
-                            <ul class="list-unstyled mb-0">
+                            <ul class="list-unstyled mb-0" style="font-size: 14px;">
                                 <li class="mb-2">
                                     <span class="fw-semibold text-secondary">Local Name:</span>
                                     <span class="text-dark">Yash</span>
