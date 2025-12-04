@@ -172,6 +172,66 @@
     </div>
 </div>
 
+<style>
+    .footer-menu {
+    background: #ffffff;
+    padding: 8px 0;
+    border-top: 1px solid #ddd;
+    height: 60px;
+    z-index: 999;
+}
 
+.fitem {
+    text-align: center;
+    color: #333;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.fitem:hover {
+    color: #0B7DDA;
+}
+
+/* Center big add button */
+.plus-btn i {
+    font-size: 30px;
+    color: #0B7DDA;
+}
+
+/* Notification dot */
+.notify-dot {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+}
+</style>
+<div class="footer-menu fixed-bottom d-flex justify-content-around align-items-center shadow-lg d-lg-none">
+
+    <a href="index" class="fitem">
+        <i class="bi bi-house-fill"></i>
+    </a>
+
+    <a href="http://localhost/snickar/home/search" class="fitem">
+        <i class="bi bi-search"></i>
+    </a>
+
+    <a href="javascript:void(0);" onclick="chooseImageDialog();" class="fitem plus-btn">
+        <i class="bi bi-plus-circle-fill"></i>
+    </a>
+
+    <a href="http://localhost/snickar/home/explore" class="fitem">
+        <i class="bi bi-compass-fill"></i>
+    </a>
+
+    <a href="home/notification" class="fitem position-relative">
+        <i class="bi bi-bell-fill"></i>
+        <span class="notify-dot"></span>
+    </a>
+
+</div>
 
 <?php require_once('includes/footer.php'); ?>

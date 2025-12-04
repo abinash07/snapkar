@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# 1. Hide .php extension
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# 2. Username route (if no file or folder exists)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ profile.php?user=$1 [L,QSA]

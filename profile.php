@@ -1,0 +1,1 @@
+<h1>Profile Page <?php echo $_GET['user']; ?></h1>

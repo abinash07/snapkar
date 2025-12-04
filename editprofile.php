@@ -63,6 +63,106 @@
                             </form>
                         </div>
                     </div>
+
+                    <div class="card" style="box-shadow: none;">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title mb-0 p-0">Home Town</h5>
+                            </div>
+                            <form id="accountForm" class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="name" class="form-label">State</label>
+                                    <select class="form-select" id="profileVisibility">
+                                        <option value="public" selected="">Single</option>
+                                        <option value="connections">Engaged</option>
+                                        <option value="married">Married</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="email" class="form-label">City</label>
+                                    <select class="form-select" id="profileVisibility">
+                                        <option value="public" selected="">Single</option>
+                                        <option value="connections">Engaged</option>
+                                        <option value="married">Married</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="username" class="form-label">Sub City</label>
+                                    <select class="form-select" id="profileVisibility">
+                                        <option value="public" selected="">Single</option>
+                                        <option value="connections">Engaged</option>
+                                        <option value="married">Married</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="username" class="form-label">Locality</label>
+                                    <select class="form-select" id="profileVisibility">
+                                        <option value="public" selected="">Single</option>
+                                        <option value="connections">Engaged</option>
+                                        <option value="married">Married</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12 d-flex gap-2 mt-2">
+                                    <button type="submit" id="saveAccount" class="btn btn-primary">
+                                        <span class="button-text">Update Changes</span>
+                                        <span class="spinner-border spinner-border-sm ms-2 d-none" role="status"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card" style="box-shadow: none;">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title mb-0 p-0">Living City</h5>
+                            </div>
+                            <form id="accountForm" class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="name" class="form-label">State</label>
+                                    <select class="form-select" id="profileVisibility">
+                                        <option value="public" selected="">Single</option>
+                                        <option value="connections">Engaged</option>
+                                        <option value="married">Married</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="email" class="form-label">City</label>
+                                    <select class="form-select" id="profileVisibility">
+                                        <option value="public" selected="">Single</option>
+                                        <option value="connections">Engaged</option>
+                                        <option value="married">Married</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="username" class="form-label">Sub City</label>
+                                    <select class="form-select" id="profileVisibility">
+                                        <option value="public" selected="">Single</option>
+                                        <option value="connections">Engaged</option>
+                                        <option value="married">Married</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="username" class="form-label">Locality</label>
+                                    <select class="form-select" id="profileVisibility">
+                                        <option value="public" selected="">Single</option>
+                                        <option value="connections">Engaged</option>
+                                        <option value="married">Married</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12 d-flex gap-2 mt-2">
+                                    <button type="submit" id="saveAccount" class="btn btn-primary">
+                                        <span class="button-text">Update Changes</span>
+                                        <span class="spinner-border spinner-border-sm ms-2 d-none" role="status"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
                     <div class="card" style="box-shadow: none;">
                         <div class="card-body pt-3">
                             <form id="profileEditForm">
