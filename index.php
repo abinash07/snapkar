@@ -5,7 +5,7 @@
         position: relative;
         overflow: hidden;
         height: 220px;
-        border-radius: 10px;
+        border-radius: 5px;
     }
 
     .user-card img {
@@ -25,7 +25,7 @@
         width: 100%;
         padding: 8px;
         color: #fff;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        /* background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); */
     }
 
     .user-info h6 {
@@ -37,6 +37,23 @@
     .user-info small {
         font-size: 12px;
         opacity: 0.9;
+    }
+
+    .user-letter {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        color: #FFFFFF;
+        overflow: hidden;
+        position: relative;
+        font-size: 60px;
+        align-items: center;
+        flex-shrink: 0;
+        line-height: 1;
+        font-weight: bold;
+        user-select: none;
+        -webkit-user-select: none;
+        justify-content: center;
     }
 </style>
 
@@ -56,6 +73,53 @@
     <div class="row g-3">
 
         <!-- Card Item -->
+        
+        <div class="col-6 col-md-4 col-lg-2">
+            <a href="<?= $base_url; ?>Abinash">
+                <div class="user-card">
+                    <img src="<?= $base_url; ?>/assets/img/shreekrishna.jpg" alt="User">
+                    <div class="user-info">
+                        <h6>John Doe</h6>
+                        <small>Designer</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+            <a href="<?= $base_url; ?>Abinash">
+                <div class="user-card">
+                    <img src="<?= $base_url; ?>/assets/img/shreekrishna.jpg" alt="User">
+                    <div class="user-info">
+                        <h6>John Doe</h6>
+                        <small>Designer</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+            <a href="<?= $base_url; ?>Abinash">
+                <div class="user-card">
+                    <div class="user-letter" style="background-color: #0b7dda;">K</div>
+                    <div class="user-info">
+                        <h6>John Doe</h6>
+                        <small>Designer</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+            <a href="<?= $base_url; ?>Abinash">
+                <div class="user-card">
+                    <img src="<?= $base_url; ?>/assets/img/shreekrishna.jpg" alt="User">
+                    <div class="user-info">
+                        <h6>John Doe</h6>
+                        <small>Designer</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
         <div class="col-6 col-md-4 col-lg-2">
             <a href="<?= $base_url; ?>Abinash">
                 <div class="user-card">
@@ -138,53 +202,7 @@
         <div class="col-6 col-md-4 col-lg-2">
             <a href="<?= $base_url; ?>Abinash">
                 <div class="user-card">
-                    <img src="<?= $base_url; ?>/assets/img/shreekrishna.jpg" alt="User">
-                    <div class="user-info">
-                        <h6>John Doe</h6>
-                        <small>Designer</small>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-
-        <div class="col-6 col-md-4 col-lg-2">
-            <a href="<?= $base_url; ?>Abinash">
-                <div class="user-card">
-                    <img src="<?= $base_url; ?>/assets/img/shreekrishna.jpg" alt="User">
-                    <div class="user-info">
-                        <h6>John Doe</h6>
-                        <small>Designer</small>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-            <a href="<?= $base_url; ?>Abinash">
-                <div class="user-card">
-                    <img src="<?= $base_url; ?>/assets/img/shreekrishna.jpg" alt="User">
-                    <div class="user-info">
-                        <h6>John Doe</h6>
-                        <small>Designer</small>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-            <a href="<?= $base_url; ?>Abinash">
-                <div class="user-card">
-                    <img src="<?= $base_url; ?>/assets/img/shreekrishna.jpg" alt="User">
-                    <div class="user-info">
-                        <h6>John Doe</h6>
-                        <small>Designer</small>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-            <a href="<?= $base_url; ?>Abinash">
-                <div class="user-card">
-                    <img src="<?= $base_url; ?>/assets/img/shreekrishna.jpg" alt="User">
+                    <div class="user-letter" style="background-color: #0b7dda;">K</div>
                     <div class="user-info">
                         <h6>John Doe</h6>
                         <small>Designer</small>

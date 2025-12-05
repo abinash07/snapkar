@@ -18,12 +18,12 @@
 			$password = mysqli_real_escape_string($con,$params['password']);
 			$password = htmlentities($password);
 			
-			$device_token = $params['fcm_token'];
+			$device_token = $params['fcm_token'] ?? NULL;
 			#$device_token = '123456';
 
 			$date = time();
 
-			$emailquery ="SELECT * FROM user WHERE email='$email'";
+			$emailquery ="SELECT * FROM sk_user WHERE email='$email'";
 			$equery = mysqli_query($con,$emailquery);
 			$emailcount= mysqli_num_rows($equery);
 
@@ -36,12 +36,12 @@
 
 				if($status){
 					if($pass_decode){
-						$query3 = "SELECT u.name, u.username, u.email, u.phone, u.reffer_id, u.created_on, am.bio, am.image FROM user as u LEFT JOIN aboutme as am ON u.userid = am.userid WHERE u.userid = '$userid'";
+						$query3 = "SELECT u.name, u.username, u.email, u.phone, u.reffer_id, u.created_on, am.bio, am.image, am.home FROM sk_user as u LEFT JOIN sk_about_me as am ON u.userid = am.userid WHERE u.userid = '$userid'";
 						$run3 = mysqli_query($con,$query3);
 						$row3 = mysqli_fetch_assoc($run3);
 						
 						$auth_key = _generate_key($email,'123456');
-						$query4 = "UPDATE user SET auth_key = '$auth_key', auth_key_time = '$date', device_token ='$device_token' WHERE userid ='$userid'";
+						$query4 = "UPDATE sk_user SET auth_key = '$auth_key', auth_key_time = '$date', device_token ='$device_token' WHERE userid ='$userid'";
 						$run4 = mysqli_query($con,$query4);
 
 						$message = array(
@@ -54,7 +54,7 @@
 							'auth_key' => $auth_key,
 							'image' => $baseurl.'/knockapi/docs/profile/'.$row3['image'],
 							'image_last_name'=> $row3['image'],
-							'created_on' => $row3['created_on']
+							'home' => $row3['home'],
 						);
 						echo json_encode(array('status'=> 1, 'code'=>200, 'message'=>'Login success','result'=>$message));
 					}else{

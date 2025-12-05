@@ -24,6 +24,36 @@
     <!-- Template Main CSS File -->
     <link href="<?= $base_url; ?>assets/css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        const auth_key = localStorage.getItem("auth_key");
+        const currentPage = window.location.pathname.split("/").pop();
+        if (!auth_key) {
+            window.location.href = "<?= $base_url; ?>login";
+        } else {
+            $.ajax({
+                url: "<?= $base_url; ?>api/verify_auth_key.php",
+                type: "POST",
+                data: JSON.stringify({ auth_key: auth_key }),
+                dataType: "json",
+                success: function(res) {
+                    if (!res.status) {
+                        localStorage.clear();
+                        window.location.href = "<?= $base_url; ?>login";
+                    }else{
+                        var homeCheck = localStorage.getItem("home");                        
+                        if ((homeCheck === null || homeCheck === "" || homeCheck === "null" || homeCheck === "undefined") && currentPage !== "addlocation") {
+                            window.location.href = "<?= $base_url; ?>addlocation";
+                        }else{
+                            document.body.style.display = "block";
+                        }
+                    }
+                },
+                error: function() {
+                    console.log("Token verify failed");
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <header id="header" class="header fixed-top d-flex align-items-center">
@@ -107,6 +137,4 @@
         <div style="position: absolute; bottom: 2rem; left: 1.5rem; right: 1.5rem;">
             <p>© Copyright 2025, Skill Gap</p>
         </div>
-        
-        
     </aside>

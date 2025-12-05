@@ -20,35 +20,25 @@
 			$skip = isset($params['skip']) ? $params['skip'] : 0;
 			$top = isset($params['top']) ? $params['top'] : 10;
 
-            $query1 = "SELECT u.userid, u.username, u.name, ui.image, ub.id as book, s.profile_in_search
-            FROM user as u 
-            LEFT JOIN aboutme as ui ON ui.userid = u.userid 
-            LEFT JOIN userbook as ub ON ub.guestuserid = u.userid 
-            LEFT JOIN setting as s ON s.userid = u.userid
-            WHERE (s.profile_in_search IS NULL OR s.profile_in_search = 1) AND (u.email LIKE '%{$query}%' OR u.username = '$query') LIMIT $skip, $top";
+			$query1 = "SELECT svm.id, svm.name, sscm.name as sub_city_name, scm.name as city, ssm.name as state 
+			FROM sk_village_master as svm 
+			JOIN sk_sub_city_master as sscm ON sscm.id = svm.sub_city_id 
+			JOIN sk_city_master as scm ON scm.id = sscm.city_id 
+			JOIN sk_state_master as ssm ON ssm.id = scm.state_id 
+			WHERE svm.name LIKE '%{$query}%' ORDER BY name LIMIT 0, 15";
+
             $run1 = mysqli_query($con, $query1);
             if(mysqli_num_rows($run1)){
             	while($row1 = mysqli_fetch_assoc($run1)){
-            		if($row1['book'] != NULL){
-            			$saved_status = 0;
-            			$button_text = "Save";
-            		}else{
-            			$saved_status = 1;
-            			$button_text = "Message";
-            		}
 	                $message[] = array(
-	                    'name' => $row1['name'],
-	                    'userid'=> $row1['userid'],
-	                    'username'=> $row1['username'],
-	                    'image' => $baseurl.'/knockapi/docs/profile/'.$row1['image'],
-	                    'saved_status' => $saved_status,
-	                    'button_text' => $button_text,
-	                    'button_color' => '#07BDDA',
-	                    'profile_in_search' => $row1['profile_in_search'],
-	                    'verified' => true,
+	                    'id' => $row1['id'],
+	                    'name'=> $row1['name'],
+	                    'sub_city_name'=> $row1['sub_city_name'],
+	                    'city' => $row1['city'],
+	                    'state' => $row1['state'],
 	                );
             	}
-                echo json_encode(array('status'=> 1, 'code'=>200, 'message'=>'No record found', 'result'=>$message));
+                echo json_encode(array('status'=> 1, 'code'=>200, 'message'=>'Record found', 'result'=>$message));
             }else{
                 echo json_encode(array('status'=> 1, 'code'=>200, 'message'=>'No record found'));
             }

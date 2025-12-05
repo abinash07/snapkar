@@ -372,15 +372,32 @@
 
             // AJAX call
             $.ajax({
-                url: "<?= $base_url; ?>loginme",
+                url: "<?= $base_url; ?>api/login.php",
                 type: "POST",
-                data: {username: email, password: password},
+                data: JSON.stringify({username: email, password: password}),
                 dataType: "json",
                 success: function (response) {
-                    if (response.status === true) {
+                    if (response.status) {
                         // ✅ Login success
                         //alert("Login successful!");
-                        window.location.href = "<?= $base_url; ?>";
+
+
+                        localStorage.setItem("name", response.result.name);
+                        localStorage.setItem("username", response.result.username);
+                        localStorage.setItem("email", response.result.email);
+                        localStorage.setItem("bio", response.result.bio);
+                        localStorage.setItem("image", response.result.image);
+                        localStorage.setItem("reffer_id", response.result.reffer_id);
+                        localStorage.setItem("auth_key", response.result.auth_key);
+                        localStorage.setItem("home", response.result.home);
+
+                        if (!response.result.home) {
+                            window.location.href = "<?= $base_url; ?>addlocation";
+                        } else {
+                            window.location.href = "<?= $base_url; ?>";
+                        }
+
+                        
                     } else {
                         // ❌ API returned error
                         //alert(response.message || "Invalid credentials");

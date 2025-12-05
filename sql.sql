@@ -7,3 +7,5 @@ CREATE TABLE `snapkar`.`sk_sub_city_master` (`id` INT NOT NULL AUTO_INCREMENT , 
 CREATE TABLE `snapkar`.`sk_village_master` (`id` INT NOT NULL AUTO_INCREMENT , `sub_city` INT NOT NULL , `name` VARCHAR(255) NOT NULL , `code` VARCHAR(255) NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 ALTER TABLE `sk_village_master` CHANGE `sub_city` `sub_city_id` INT(11) NOT NULL;
+
+ALTER TABLE `sk_about_me` ADD `home` VARCHAR(255) NULL AFTER `occupation`, ADD `living` VARCHAR(255) NULL AFTER `home`;

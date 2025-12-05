@@ -40,7 +40,7 @@
 			    $run1 = mysqli_query($con,$query1);
 			    $row1 = mysqli_fetch_array($run1);
 			    $lid = @$row1['id'];
-			    $reffer_id ="SC".date("Y").$lid;
+			    $reffer_id ="SK".date("Y").$lid;
 			    $username = $firstname.$lid;
 			    $userid = uniqid().$lid;
 
@@ -57,13 +57,11 @@
 					$message = array(
 						'name' => $name,
 						'username' => $username,
+                        'email' => $email,
 						'bio' => "Hi you can knock me",
-						'email' => $email,
-						'phone' => '',
+                        'image' => $baseurl.'knockapi/docs/profile/noimg.png',
 						'reffer_id' => $reffer_id,
 						'auth_key' => $auth_key,
-						'image' => $baseurl.'knockapi/docs/profile/noimg.png',
-						'created_on' => $date
 					);
 		          	echo json_encode(array('status'=>1, "code"=> 200, 'message'=>'You account has been created','result'=>$message));
 		        }else{

@@ -291,6 +291,15 @@
                     success: function (response) {
                         if (response.status) {
                             $("#registerForm")[0].reset();
+
+                            localStorage.setItem("name", response.result.name);
+                            localStorage.setItem("username", response.result.username);
+                            localStorage.setItem("email", response.result.email);
+                            localStorage.setItem("bio", response.result.bio);
+                            localStorage.setItem("image", response.result.image);
+                            localStorage.setItem("reffer_id", response.result.reffer_id);
+                            localStorage.setItem("auth_key", response.result.auth_key);
+                            
                             window.location.href = "<?= $base_url; ?>";
                         } else {
                             $alert.html(`
