@@ -40,7 +40,7 @@
             	}
                 echo json_encode(array('status'=> 1, 'code'=>200, 'message'=>'Record found', 'result'=>$message));
             }else{
-                echo json_encode(array('status'=> 1, 'code'=>200, 'message'=>'No record found'));
+                echo json_encode(array('status'=> 0, 'code'=>201, 'message'=>'No record found'));
             }
 		}else{
 			echo json_encode(array("status" => 0, "code"=> 400, "message" => "Unauthorized"));

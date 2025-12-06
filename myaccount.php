@@ -8,19 +8,19 @@
                 <div class="col-md-3 text-center mb-4 mb-md-0">
                     <div class="profile bg-white" style="padding: 30px 20px;">
                         <img src="<?= $base_url; ?>/assets/img/shreekrishna.jpg" alt="Profile" class="rounded-circle img-fluid mb-3" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid #E4E7FA;">
-                        <h5 class="fw-semibold mb-0">Abinash Nayak</h5>
-                        <p class="mb-2 fw-semibold" style="font-size: 14px; cursor: pointer;">@Abinash <i id="shareLink" class="bi bi-share text-primary"></i></p>
-                        <p>Software Engineer</p>
+                        <h5 class="fw-semibold mb-0" id="name">---</h5>
+                        <p class="mb-2 fw-semibold" style="font-size: 14px; cursor: pointer;"><span id="username"></span> <i id="shareLink" class="bi bi-share text-primary"></i></p>
+                        <p id="occupation"></p>
 
                         <button class="btn btn-primary btn-sm mb-3 mt-2" style="font-size: 13px;">Follow</button>
                         <a href="<?= $base_url; ?>editprofile" class="btn btn-primary btn-sm mb-3 mt-2" style="font-size: 13px;">Edit Profile</a>
                         <a href="<?= $base_url; ?>settings" class="btn btn-primary btn-sm mb-3 mt-2" style="font-size: 13px;"><i class="bi bi-gear-fill"></i></a>
 
-                        <p id="bio">Hi you can knock me!</p>
+                        <p id="bio">---</p>
 
                         <div class="d-flex justify-content-around text-center border-top pt-3">
                             <div>
-                                <h6 class="mb-0">07</h6>
+                                <h6 class="mb-0" id="view">07</h6>
                                 <small class="text-muted">Views</small>
                             </div>
                             <div>
@@ -83,3 +83,24 @@
 </main>
 
 <?php require_once('includes/footer.php'); ?>
+<script>
+    getAccountData();
+    function getAccountData(){
+        $.ajax({
+            url: "<?= $base_url; ?>api/get_my_profile.php",
+            type: "POST",
+            data: JSON.stringify({auth_key: auth_key}),
+            dataType: "json",
+            cache: false,
+            success: function(data){
+                if(data.status){
+                    $('#name').html(data.result.name);
+                    $('#username').html('@'+data.result.username);
+                    $('#occupation').html(data.result.name);
+                    $('#bio').html(data.result.bio);
+                    $('#view').html(data.result.view);
+                }
+            }
+        });
+    }
+</script>

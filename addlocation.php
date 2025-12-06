@@ -15,7 +15,9 @@
         </div>
     </div>
 
-    <div class="list-group" id="resultDiv"></div>
+    <div class="list-group" id="resultDiv">
+        
+    </div>
 </div>
 
 <?php require_once('includes/footer.php'); ?>
@@ -41,28 +43,31 @@
                     $("#loader").show();
                 },
                 success: function (res) {
-                    if (res.status) {
-                        if (res.result.length > 0) {
-                            $.each(res.result, function(key, val) {
-                                $('#resultDiv').append(
-                                    `<a href="#" class="list-group-item list-group-item-action locationItem d-flex align-items-center" data-id="${val.id}">
-                                        <i class="bi bi-geo-alt fs-4 me-3"></i>
-                                        <div>
-                                            <div class="fw-semibold">${val.name}, ${val.sub_city_name}</div>
-                                            <small class="text-muted">${val.city}, ${val.state}</small>
-                                        </div>
+                    if (res.status && res.result.length > 0) {
+                        $.each(res.result, function(key, val) {
+                            $('#resultDiv').append(
+                                `<a href="#" class="list-group-item list-group-item-action locationItem d-flex align-items-center" data-id="${val.id}">
+                                    <i class="bi bi-geo-alt fs-4 me-3"></i>
+                                    <div>
+                                        <div class="fw-semibold">${val.name}, ${val.sub_city_name}</div>
+                                        <small class="text-muted">${val.city}, ${val.state}</small>
+                                    </div>
 
-                                        <div class="insert-loader spinner-border spinner-border-sm text-primary d-none"></div>
-                                    </a>`
-                                );
-                            });
-                        }else{
-                           $("#loader").hide();
-                        $("#results").html(`<p class="text-center mt-3 text-muted">No results found</p>`); 
-                        }
+                                    <div class="insert-loader spinner-border spinner-border-sm text-primary d-none"></div>
+                                </a>`
+                            );
+                        });
                     } else {
                         $("#loader").hide();
-                        $("#results").html(`<p class="text-center mt-3 text-muted">No results found</p>`);
+                        $("#resultDiv").html(
+                            `<div class="p-4 text-center border rounded bg-white">
+                                <div class="mb-3"><i class="bi bi-geo-alt text-danger" style="font-size: 2.5rem;"></i></div>
+                                <h5 class="fw-bold mb-2">No Locality Found</h5>
+                                <p class="mb-1 text-muted">We couldn't find any locality matching <span class="fw-semibold text-dark">"Jaharadia"</span></p>
+                                <p class="mb-3 text-secondary">Help Snapkar expand its location database by adding it.</p>
+                                <a href="<?= $base_url; ?>addnewlocation" class="btn btn-primary px-4 py-2">Add New Locality</a>
+                            </div>`
+                        );
                     }
                 },
                 complete: function () {

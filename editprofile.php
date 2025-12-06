@@ -28,7 +28,6 @@
                                         <input type="date" class="form-control" name="email" id="Email" value="">
                                         <div class="form-text" style="font-size: 12px;">Only year will visible to public.</div>
                                     </div>
-                                    
                                 </div>
                                 <div class="row mb-3">
                                     <label for="bio" class="col-md-4 col-lg-3 col-form-label">Bio</label>
